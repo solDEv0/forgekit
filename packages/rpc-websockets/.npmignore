@@ -1,0 +1,7 @@
+node_modules
+.coveralls.yml
+src
+test
+tools
+docs
+misc

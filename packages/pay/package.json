@@ -1,0 +1,32 @@
+{
+  "name": "@forgekit/pay",
+  "version": "0.1.0",
+  "description": "Build and verify SOL payment transactions. Unsigned v0 tx for frontend signing, on-chain verification with exact-amount and sender checks.",
+  "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solDEv0/forgekit.git",
+    "directory": "packages/pay"
+  },
+  "homepage": "https://github.com/solDEv0/forgekit/tree/main/packages/pay#readme",
+  "bugs": "https://github.com/solDEv0/forgekit/issues",
+  "keywords": [
+    "solana",
+    "payment",
+    "transaction",
+    "launchpad"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@forgekit/errors": "^0.1.0",
+    "@solana/web3.js": "^1.98.0"
+  }
+}

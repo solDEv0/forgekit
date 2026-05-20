@@ -1,0 +1,44 @@
+# @forgekit/meta
+
+Upload token and NFT metadata to Arweave via Turbo. One call, permanent storage.
+
+## Install
+
+```bash
+npm install @forgekit/meta
+```
+
+## Usage
+
+```js
+import { cast } from '@forgekit/meta';
+
+const { uri } = await cast('my-token')
+  .image('./logo.png')
+  .describe({ name: 'MY TOKEN', symbol: 'MTK', description: 'Built different.' })
+  .attributes([{ trait_type: 'Tier', value: 'Quick' }])
+  .deploy();
+
+console.log(uri); // https://arweave.net/...
+```
+
+## Error Handling
+
+```js
+import { cast, ForgeUploadError, ForgeBalanceError } from '@forgekit/meta';
+
+try {
+  const { uri } = await cast('my-token').image('./logo.png').describe({...}).deploy();
+} catch (err) {
+  if (err instanceof ForgeBalanceError) {
+    console.error(err.hint); // tells you exactly what to do
+  }
+  if (err.retry) {
+    // safe to retry
+  }
+}
+```
+
+## License
+
+MIT

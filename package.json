@@ -1,0 +1,14 @@
+{
+  "name": "forgekit",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "description": "A precision toolkit for engineers building token launchpads, metadata pipelines, and onchain systems on Solana.",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "overrides": {
+    "rpc-websockets": "@forgekit/rpc-websockets@9.3.9"
+  }
+}

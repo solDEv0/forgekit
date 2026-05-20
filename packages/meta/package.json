@@ -1,0 +1,40 @@
+{
+  "name": "@forgekit/meta",
+  "version": "0.1.0",
+  "description": "Upload token and NFT metadata to Arweave via Turbo. One call, permanent storage.",
+  "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solDEv0/forgekit.git",
+    "directory": "packages/meta"
+  },
+  "homepage": "https://github.com/solDEv0/forgekit/tree/main/packages/meta#readme",
+  "bugs": "https://github.com/solDEv0/forgekit/issues",
+  "keywords": [
+    "solana",
+    "arweave",
+    "turbo",
+    "metadata",
+    "nft",
+    "token",
+    "launchpad"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@forgekit/errors": "^0.1.0",
+    "@ardrive/turbo-sdk": "^1.40.2",
+    "bs58": "^6.0.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@solana/web3.js": "^1.98.4"
+  }
+}

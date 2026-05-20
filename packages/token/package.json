@@ -1,0 +1,34 @@
+{
+  "name": "@forgekit/token",
+  "version": "0.1.0",
+  "description": "Mint Solana tokens with authority revocations and burn in one atomic transaction.",
+  "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solDEv0/forgekit.git",
+    "directory": "packages/token"
+  },
+  "homepage": "https://github.com/solDEv0/forgekit/tree/main/packages/token#readme",
+  "bugs": "https://github.com/solDEv0/forgekit/issues",
+  "keywords": [
+    "solana",
+    "token",
+    "mint",
+    "spl",
+    "launchpad"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@forgekit/errors": "^0.1.0",
+    "@solana/web3.js": "^1.98.0",
+    "@solana/spl-token": "^0.4.9"
+  }
+}

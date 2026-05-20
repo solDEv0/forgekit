@@ -1,0 +1,32 @@
+{
+  "name": "@forgekit/fees",
+  "version": "0.1.0",
+  "description": "Launchpad fee schedule. Platform fees, LP splits, swap rates, and total payment amounts. Pure math, zero dependencies, no network.",
+  "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solDEv0/forgekit.git",
+    "directory": "packages/fees"
+  },
+  "homepage": "https://github.com/solDEv0/forgekit/tree/main/packages/fees#readme",
+  "bugs": "https://github.com/solDEv0/forgekit/issues",
+  "dependencies": {
+    "@forgekit/errors": "^0.1.0"
+  },
+  "keywords": [
+    "solana",
+    "launchpad",
+    "fees",
+    "lp",
+    "raydium"
+  ],
+  "license": "MIT"
+}
