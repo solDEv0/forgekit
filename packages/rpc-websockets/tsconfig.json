@@ -4,6 +4,7 @@
         "allowSyntheticDefaultImports": true,
         "allowUnreachableCode": false,
         "esModuleInterop": true,
+        "ignoreDeprecations": "6.0",
         "lib": ["ESNext", "ESNext.Disposable", "DOM"],
         "module": "CommonJS",
         "moduleResolution": "node",

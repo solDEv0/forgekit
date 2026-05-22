@@ -24,6 +24,9 @@
     "transaction",
     "launchpad"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "dependencies": {
     "@forgekit-labs/errors": "^0.1.0",

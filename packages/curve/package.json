@@ -28,5 +28,8 @@
     "math",
     "raydium"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT"
 }

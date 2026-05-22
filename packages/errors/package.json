@@ -22,5 +22,8 @@
     "forgekit",
     "errors"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT"
 }

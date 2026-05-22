@@ -28,5 +28,8 @@
     "lp",
     "raydium"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT"
 }
