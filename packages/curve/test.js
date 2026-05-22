@@ -39,7 +39,7 @@ function assertClose(label, actual, expected, tolerance = 1e-10) {
 
 // ── curve() validation ────────────────────────────────────────────────────────
 
-console.log('\ncurve()validation');
+console.log('\ncurve() validation');
 
 assertThrows('rejects missing name',          () => curve(),           ForgeValidationError);
 assertThrows('rejects non-string name',       () => curve(42),         ForgeValidationError);
@@ -56,9 +56,9 @@ assertThrows('marketCap without solPrice',    () => curve('x').supply(1e9).marke
 assertThrows('progress missing raised',       () => curve('x').progress(null, 1000n),            ForgeValidationError);
 assertThrows('progress missing threshold',    () => curve('x').progress(500n, null),             ForgeValidationError);
 
-// ── curve() computestartPrice ─────────────────────────────────────────────
+// ── curve() compute startPrice ─────────────────────────────────────────────
 
-console.log('\ncurve()startPrice');
+console.log('\ncurve() startPrice');
 
 // STLP production defaults: $5K start MC, 980M supply (post-2%-burn), $180 SOL
 const SUPPLY    = 980_000_000;
@@ -74,9 +74,9 @@ assertClose('startPrice: $5K MC, 980M supply, $180 SOL',
 assert('startPrice returns a positive number', typeof mintInitPrice === 'number' && mintInitPrice > 0);
 assert('higher startMc → higher startPrice', c.startPrice(10_000) > mintInitPrice);
 
-// ── curve() computegraduationAt ───────────────────────────────────────────
+// ── curve() compute graduationAt ───────────────────────────────────────────
 
-console.log('\ncurve()graduationAt');
+console.log('\ncurve() graduationAt');
 
 const threshold = c.graduationAt(50_000);
 // $50K MC at $180/SOL = 277.77... SOL = 277_777_777_778 lamports
@@ -91,9 +91,9 @@ assert('higher gradMc → higher threshold', c.graduationAt(100_000) > threshold
 const recoveredMcUsd = Number(threshold) / 1e9 * SOL_PRICE;
 assertClose('graduationAt round-trip: threshold → MC ≈ $50K', recoveredMcUsd, 50_000, 1);
 
-// ── curve() computeprogress ───────────────────────────────────────────────
+// ── curve() compute progress ───────────────────────────────────────────────
 
-console.log('\ncurve()progress');
+console.log('\ncurve() progress');
 
 const { pct: pct0, remaining: rem0 } = c.progress(0n, threshold);
 assert('0 raised → 0% progress', pct0 === 0, `got ${pct0}`);
@@ -111,9 +111,9 @@ assert('fully raised → 0 remaining', rem100 === 0n, `got ${rem100}`);
 const { pct: pctOver } = c.progress(threshold * 2n, threshold);
 assert('over threshold → capped at 100%', pctOver === 100, `got ${pctOver}`);
 
-// ── curve() computemarketCap ──────────────────────────────────────────────
+// ── curve() compute marketCap ──────────────────────────────────────────────
 
-console.log('\ncurve()marketCap');
+console.log('\ncurve() marketCap');
 
 const spotSol = mintInitPrice;  // at launch, spot price = starting price
 const mc = c.marketCap(spotSol);

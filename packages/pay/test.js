@@ -13,7 +13,7 @@ function fail(label, err) { console.error(`  FAIL  ${label}\n        ${err?.mess
 // ── Validation tests (no network) ────────────────────────────────────────────
 
 function testValidation() {
-  console.log('\nValidationpay()');
+  console.log('\nValidation pay()');
 
   const addr = 'abc123abc123abc123abc123abc123ab';
 
@@ -33,7 +33,7 @@ function testValidation() {
 
   runCases(payCases);
 
-  console.log('\nValidationverify()');
+  console.log('\nValidation verify()');
 
   const verifyCases = [
     ['rejects missing name',            () => verify(),                                                                              ForgeValidationError],
@@ -82,7 +82,7 @@ async function testPayOnDevnet() {
 
   const keypair    = Keypair.fromSecretKey(bs58.decode(TEST_SECRET));
   const connection = new Connection(RPC, 'confirmed');
-  const recipient  = Keypair.generate();  // throwawayjust needs to be a valid address
+  const recipient  = Keypair.generate();  // throwaway just needs to be a valid address
 
   console.log(`  Wallet  ${keypair.publicKey.toBase58()}`);
 
@@ -94,10 +94,10 @@ async function testPayOnDevnet() {
     return;
   }
 
-  const AMOUNT = 1_000_000n; // 0.001 SOLsmall enough to not waste devnet funds
+  const AMOUNT = 1_000_000n; // 0.001 SOL small enough to not waste devnet funds
 
   // ── 1. Build the unsigned payment tx ──────────────────────────────────────
-  console.log('\n  Step 1Building unsigned payment tx...');
+  console.log('\n  Step 1 Building unsigned payment tx...');
   let built;
   try {
     built = await pay('devnet-test')
@@ -135,7 +135,7 @@ async function testPayOnDevnet() {
     fail('returns correct totalLamports', new Error(`got: ${built.totalLamports}`));
 
   // ── 3. Sign and broadcast (simulating the frontend) ───────────────────────
-  console.log('\n  Step 2Signing and broadcasting...');
+  console.log('\n  Step 2 Signing and broadcasting...');
   let signature;
   try {
     const txBytes = Buffer.from(built.transaction, 'base64');
@@ -160,7 +160,7 @@ async function testPayOnDevnet() {
   }
 
   // ── 4. Verify the confirmed payment ───────────────────────────────────────
-  console.log('\n  Step 3Verifying on-chain payment...');
+  console.log('\n  Step 3 Verifying on-chain payment...');
   let verifyResult;
   try {
     verifyResult = await verify('devnet-test')
@@ -183,7 +183,7 @@ async function testPayOnDevnet() {
     fail('returns slot number', new Error(`got: ${verifyResult.slot}`));
 
   // ── 5. Verify rejects wrong sender ────────────────────────────────────────
-  console.log('\n  Step 4Verify rejects tampered parameters...');
+  console.log('\n  Step 4 Verify rejects tampered parameters...');
   const fakeWallet = Keypair.generate().publicKey.toBase58();
 
   try {

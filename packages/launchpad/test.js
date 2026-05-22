@@ -77,7 +77,7 @@ async function testLaunchOnDevnet() {
   }
 
   // ── 1. Mint a fresh token to use as pool base ──────────────────────────────
-  console.log('\n  Step 1Minting test token...');
+  console.log('\n  Step 1 Minting test token...');
   let mintResult;
   try {
     mintResult = await mint('launchpad-test-token')
@@ -100,7 +100,7 @@ async function testLaunchOnDevnet() {
   }
 
   // ── 2. Launch the CPMM pool ────────────────────────────────────────────────
-  console.log('\n  Step 2Creating Raydium CPMM pool...');
+  console.log('\n  Step 2 Creating Raydium CPMM pool...');
   let poolResult;
   try {
     poolResult = await launch('launchpad-test-pool')
@@ -141,8 +141,8 @@ async function testLaunchOnDevnet() {
   if (poolResult.signature && typeof poolResult.signature === 'string') pass('returns signature');
   else fail('returns signature', new Error(`got: ${poolResult.signature}`));
 
-  // ── 5. Idempotencysecond launch must throw ForgePoolExistsError ─────────
-  console.log('\n  Step 3Testing idempotency...');
+  // ── 5. Idempotency second launch must throw ForgePoolExistsError ─────────
+  console.log('\n  Step 3 Testing idempotency...');
   try {
     await launch('launchpad-test-pool-retry')
       .mint(mintResult.mintAddress)

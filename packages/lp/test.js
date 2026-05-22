@@ -21,7 +21,7 @@ function fail(label, err) { console.error(`  FAIL  ${label}\n        ${err?.mess
 // ── Validation tests (no network) ────────────────────────────────────────────
 
 function testValidation() {
-  console.log('\nValidationdistribute()');
+  console.log('\nValidation distribute()');
 
   const key    = Keypair.generate().secretKey;
   const mint32 = 'abc123abc123abc123abc123abc123ab';
@@ -42,7 +42,7 @@ function testValidation() {
 
   runCases(distributeCases);
 
-  console.log('\nValidationlock()');
+  console.log('\nValidation lock()');
 
   const lockCases = [
     ['rejects missing name',          () => lock(),                                                                     ForgeValidationError],
@@ -55,7 +55,7 @@ function testValidation() {
 
   runCases(lockCases);
 
-  console.log('\nValidationtransfer()');
+  console.log('\nValidation transfer()');
 
   const transferCases = [
     ['rejects missing name',          () => transfer(),                                                                                  ForgeValidationError],
@@ -69,7 +69,7 @@ function testValidation() {
 
   runCases(transferCases);
 
-  console.log('\nValidationliquidate()');
+  console.log('\nValidation liquidate()');
 
   const liquidateCases = [
     ['rejects missing name',              () => liquidate(),                                                                                      ForgeValidationError],
@@ -128,7 +128,7 @@ async function testLiquidateOnDevnet() {
   }
 
   // ── 1. Mint a fresh token ──────────────────────────────────────────────────
-  console.log('\n  Step 1Minting test token...');
+  console.log('\n  Step 1 Minting test token...');
   let mintResult;
   try {
     mintResult = await mint('lp-test-token')
@@ -147,7 +147,7 @@ async function testLiquidateOnDevnet() {
   }
 
   // ── 2. Create the pool ────────────────────────────────────────────────────
-  console.log('\n  Step 2Creating Raydium CPMM pool...');
+  console.log('\n  Step 2 Creating Raydium CPMM pool...');
   let poolResult;
   try {
     poolResult = await launch('lp-test-pool')
@@ -169,7 +169,7 @@ async function testLiquidateOnDevnet() {
   }
 
   // ── 3. Fetch LP mint total supply (before any distribution) ───────────────
-  console.log('\n  Step 3Fetching LP mint supply...');
+  console.log('\n  Step 3 Fetching LP mint supply...');
   let lpSupply;
   try {
     const supplyInfo = await connection.getTokenSupply(new PublicKey(poolResult.lpMint));
@@ -181,13 +181,13 @@ async function testLiquidateOnDevnet() {
     return;
   }
 
-  // ── 4. liquidate()quick tier ───────────────────────────────────────────
-  // Use a throwaway creator keypairplatform and creator must be different
+  // ── 4. liquidate() quick tier ───────────────────────────────────────────
+  // Use a throwaway creator keypair platform and creator must be different
   // wallets or the 10% "transfer" is a no-op (same ATA), breaking idempotency.
   const creatorKeypair = Keypair.generate();
   console.log(`  Creator ${creatorKeypair.publicKey.toBase58()}`);
 
-  console.log('\n  Step 4Running liquidate() quick tier...');
+  console.log('\n  Step 4 Running liquidate() quick tier...');
   let liquidateResult;
   try {
     liquidateResult = await liquidate('lp-test-quick')
@@ -225,8 +225,8 @@ async function testLiquidateOnDevnet() {
   else
     fail('returns distribute.alreadyDone = false on first run', new Error(`got: ${d.alreadyDone}`));
 
-  // ── 6. Idempotencysecond liquidate must skip ───────────────────────────
-  console.log('\n  Step 5Testing idempotency...');
+  // ── 6. Idempotency second liquidate must skip ───────────────────────────
+  console.log('\n  Step 5 Testing idempotency...');
   try {
     const retry = await liquidate('lp-test-quick-retry')
       .tier('quick')
@@ -238,14 +238,14 @@ async function testLiquidateOnDevnet() {
       .send();
 
     if (retry.distribute.alreadyDone === true && retry.distribute.signature === null) {
-      pass('idempotentsecond run returns alreadyDone=true');
+      pass('idempotent second run returns alreadyDone=true');
     } else {
-      fail('idempotentsecond run returns alreadyDone=true', new Error(
+      fail('idempotent second run returns alreadyDone=true', new Error(
         `got alreadyDone=${retry.distribute.alreadyDone}, sig=${retry.distribute.signature}`
       ));
     }
   } catch (err) {
-    fail('idempotentsecond run returns alreadyDone=true', err);
+    fail('idempotent second run returns alreadyDone=true', err);
   }
 }
 

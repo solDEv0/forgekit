@@ -57,7 +57,7 @@ assert('SWAP_FEE_RATE safe = 10000',  SWAP_FEE_RATE.safe === 10_000);
 
 // ── fees() validation ─────────────────────────────────────────────────────────
 
-console.log('\nfees()validation');
+console.log('\nfees() validation');
 
 assertThrows('rejects missing name',     () => fees(),      ForgeValidationError);
 assertThrows('rejects non-string name',  () => fees(42),    ForgeValidationError);
@@ -72,9 +72,9 @@ assertThrows('split() without tier',     () => fees('x').split(1_000_000n),     
 assertThrows('split() zero supply',      () => fees('x').tier('quick').split(0n),  ForgeValidationError);
 assertThrows('swapRate() without tier',  () => fees('x').swapRate(),               ForgeValidationError);
 
-// ── fees()quick tier ───────────────────────────────────────────────────────
+// ── fees() quick tier ───────────────────────────────────────────────────────
 
-console.log('\nfees()quick tier');
+console.log('\nfees() quick tier');
 
 const fq = fees('launch-quick').tier('quick').seed(0.65);
 
@@ -96,9 +96,9 @@ const swapQ = fq.swapRate();
 assert('quick swapRate pct = 2',      swapQ.pct === 2);
 assert('quick swapRate rate = 20000', swapQ.rate === 20_000);
 
-// ── fees()safe tier ────────────────────────────────────────────────────────
+// ── fees() safe tier ────────────────────────────────────────────────────────
 
-console.log('\nfees()safe tier');
+console.log('\nfees() safe tier');
 
 const fs = fees('launch-safe').tier('safe').seed(0.65);
 
@@ -120,9 +120,9 @@ const swapS = fs.swapRate();
 assert('safe swapRate pct = 1',       swapS.pct === 1);
 assert('safe swapRate rate = 10000',  swapS.rate === 10_000);
 
-// ── fees()seed validation boundary ────────────────────────────────────────
+// ── fees() seed validation boundary ────────────────────────────────────────
 
-console.log('\nfees()seed boundary');
+console.log('\nfees() seed boundary');
 
 assertThrows('seed 0.64 rejected',    () => fees('x').tier('quick').seed(0.64),  ForgeValidationError);
 const fBoundary = fees('x').tier('quick').seed(0.65);
@@ -133,9 +133,9 @@ assert('safe 2 SOL seed: total = fee + 2 SOL',
   fHighSeed.total() === 500_000_000n + 2_000_000_000n,
   `got ${fHighSeed.total()}`);
 
-// ── fees()split rounding ───────────────────────────────────────────────────
+// ── fees() split rounding ───────────────────────────────────────────────────
 
-console.log('\nfees()split rounding');
+console.log('\nfees() split rounding');
 
 // Supply not cleanly divisible by basis points
 const splitOdd = fees('x').tier('quick').split(1_000_001n);
@@ -143,7 +143,7 @@ assert('odd supply: parts sum to exact supply',
   splitOdd.platform + splitOdd.creator + splitOdd.burned === 1_000_001n,
   `got ${splitOdd.platform + splitOdd.creator + splitOdd.burned}`);
 
-// Large supplyrealistic LP token amount
+// Large supply realistic LP token amount
 const LP_SUPPLY = 1_000_000_000_000n;  // 1T raw units
 const splitLarge = fees('x').tier('quick').split(LP_SUPPLY);
 assert('large supply: creator = 10%',  splitLarge.creator  === 100_000_000_000n);

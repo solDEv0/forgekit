@@ -37,7 +37,7 @@ function testValidation() {
   for (const [label, fn, ErrorClass] of cases) {
     try {
       const result = fn();
-      // send() returns a Promisecatch async validation too
+      // send() returns a Promise catch async validation too
       if (result instanceof Promise) {
         result.catch(err => {
           if (err instanceof ErrorClass) pass(label);
