@@ -17,7 +17,7 @@ import {
   MINT_SIZE,
   TOKEN_PROGRAM_ID,
 } from '@solana/spl-token';
-import { ForgeValidationError, ForgeTxError, ForgeRpcError } from '@forgekit/errors';
+import { ForgeValidationError, ForgeTxError, ForgeRpcError } from '@forgekit-labs/errors';
 
 const VALID_AUTHORITIES = new Set(['freeze', 'mint']);
 

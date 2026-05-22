@@ -1,17 +1,17 @@
-# @forgekit/meta
+# @forgekit-labs/meta
 
 Upload token and NFT metadata to Arweave via Turbo. One call, permanent storage.
 
 ## Install
 
 ```bash
-npm install @forgekit/meta
+npm install @forgekit-labs/meta
 ```
 
 ## Usage
 
 ```js
-import { cast } from '@forgekit/meta';
+import { cast } from '@forgekit-labs/meta';
 
 const { uri } = await cast('my-token')
   .image('./logo.png')
@@ -25,7 +25,7 @@ console.log(uri); // https://arweave.net/...
 ## Error Handling
 
 ```js
-import { cast, ForgeUploadError, ForgeBalanceError } from '@forgekit/meta';
+import { cast, ForgeUploadError, ForgeBalanceError } from '@forgekit-labs/meta';
 
 try {
   const { uri } = await cast('my-token').image('./logo.png').describe({...}).deploy();

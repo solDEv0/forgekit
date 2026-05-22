@@ -12,7 +12,7 @@ import {
   createTransferCheckedInstruction,
   createAssociatedTokenAccountIdempotentInstruction,
 } from './helpers.js';
-import { ForgeValidationError, ForgeRpcError } from '@forgekit/errors';
+import { ForgeValidationError, ForgeRpcError } from '@forgekit-labs/errors';
 
 class DistributeBuilder {
   #name;

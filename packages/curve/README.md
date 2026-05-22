@@ -1,17 +1,17 @@
-# @forgekit/curve
+# @forgekit-labs/curve
 
 Bonding curve math. Starting price, graduation threshold, progress, market cap. Pure functions, no network, zero third-party dependencies.
 
 ## Install
 
 ```bash
-npm install @forgekit/curve
+npm install @forgekit-labs/curve
 ```
 
 ## Usage
 
 ```js
-import { curve } from '@forgekit/curve';
+import { curve } from '@forgekit-labs/curve';
 
 const c = curve('my-token')
   .supply(980_000_000)
@@ -36,7 +36,7 @@ import {
   progress,
   marketCap,
   basisOf,
-} from '@forgekit/curve';
+} from '@forgekit-labs/curve';
 ```
 
 All utilities are BigInt-safe and return strings for amounts above the JavaScript float limit.
@@ -44,7 +44,7 @@ All utilities are BigInt-safe and return strings for amounts above the JavaScrip
 ## Error Handling
 
 ```js
-import { curve, ForgeValidationError } from '@forgekit/curve';
+import { curve, ForgeValidationError } from '@forgekit-labs/curve';
 
 try {
   curve('my-token').supply(-1);

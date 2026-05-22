@@ -21,7 +21,7 @@ import {
   ForgeTxError,
   ForgeRpcError,
   ForgePoolExistsError,
-} from '@forgekit/errors';
+} from '@forgekit-labs/errors';
 
 const LAMPORTS_PER_SOL = 1_000_000_000n;
 

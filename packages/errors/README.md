@@ -1,11 +1,11 @@
-# @forgekit/errors
+# @forgekit-labs/errors
 
 Canonical error classes for the forgekit toolkit. Every error carries a `code`, `message`, `hint`, `cause`, and `retry` flag so consumers can branch cleanly.
 
 ## Install
 
 ```bash
-npm install @forgekit/errors
+npm install @forgekit-labs/errors
 ```
 
 You normally do not install this directly. Every other forgekit package depends on it and re-exports the classes it uses.
@@ -13,7 +13,7 @@ You normally do not install this directly. Every other forgekit package depends 
 ## Usage
 
 ```js
-import { ForgeValidationError, ForgeTxError } from '@forgekit/errors';
+import { ForgeValidationError, ForgeTxError } from '@forgekit-labs/errors';
 
 try {
   await someForgekitOperation();

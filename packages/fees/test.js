@@ -154,6 +154,6 @@ assert('large supply: sums correctly',
 
 // ── Summary ───────────────────────────────────────────────────────────────────
 
-console.log(`\n--- @forgekit/fees ---`);
+console.log(`\n--- @forgekit-labs/fees ---`);
 console.log(`  ${passed} passed, ${failed} failed`);
 if (failed > 0) process.exitCode = 1;

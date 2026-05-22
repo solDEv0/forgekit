@@ -9,6 +9,6 @@
     "node": ">=18.0.0"
   },
   "overrides": {
-    "rpc-websockets": "@forgekit/rpc-websockets@9.3.9"
+    "rpc-websockets": "@forgekit-labs/rpc-websockets@9.3.9"
   }
 }

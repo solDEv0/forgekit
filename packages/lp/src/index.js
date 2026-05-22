@@ -8,4 +8,4 @@ export {
   ForgeValidationError,
   ForgeTxError,
   ForgeRpcError,
-} from '@forgekit/errors';
+} from '@forgekit-labs/errors';

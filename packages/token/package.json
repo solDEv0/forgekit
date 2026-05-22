@@ -1,5 +1,5 @@
 {
-  "name": "@forgekit/token",
+  "name": "@forgekit-labs/token",
   "version": "0.1.0",
   "description": "Mint Solana tokens with authority revocations and burn in one atomic transaction.",
   "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",
@@ -27,7 +27,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@forgekit/errors": "^0.1.0",
+    "@forgekit-labs/errors": "^0.1.0",
     "@solana/web3.js": "^1.98.0",
     "@solana/spl-token": "^0.4.9"
   }

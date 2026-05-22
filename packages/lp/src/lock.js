@@ -6,7 +6,7 @@ import {
   TOKEN_PROGRAM_ID,
   getAssociatedTokenAddressSync,
 } from './helpers.js';
-import { ForgeValidationError, ForgeTxError, ForgeRpcError } from '@forgekit/errors';
+import { ForgeValidationError, ForgeTxError, ForgeRpcError } from '@forgekit-labs/errors';
 import {
   Raydium,
   TxVersion,

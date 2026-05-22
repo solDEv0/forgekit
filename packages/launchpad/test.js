@@ -167,7 +167,7 @@ async function testLaunchOnDevnet() {
 
 // ── Run ───────────────────────────────────────────────────────────────────────
 
-console.log('--- @forgekit/launchpad ---');
+console.log('--- @forgekit-labs/launchpad ---');
 testValidation();
 await testLaunchOnDevnet();
 console.log('\nDone.');

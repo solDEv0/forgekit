@@ -1,5 +1,5 @@
 {
-  "name": "@forgekit/errors",
+  "name": "@forgekit-labs/errors",
   "version": "0.1.0",
   "description": "Canonical error classes for the forgekit toolkit. Every error carries a code, message, hint, cause, and retry flag so consumers can branch cleanly.",
   "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",

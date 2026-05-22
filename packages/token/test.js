@@ -134,7 +134,7 @@ async function testMintOnDevnet() {
 
 // ── Run ───────────────────────────────────────────────────────────────────────
 
-console.log('--- @forgekit/token ---');
+console.log('--- @forgekit-labs/token ---');
 testValidation();
 await testMintOnDevnet();
 console.log('\nDone.');

@@ -10,4 +10,4 @@ export {
   basisOf,
 } from './math.js';
 
-export { ForgeError, ForgeValidationError } from '@forgekit/errors';
+export { ForgeError, ForgeValidationError } from '@forgekit-labs/errors';
