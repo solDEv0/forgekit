@@ -1,11 +1,11 @@
-# @forgekit/lp
+# @forgekit-labs/lp
 
 LP token distribution after Raydium CPMM pool creation. Burn, lock, transfer. Individually or as a tier-aware pipeline.
 
 ## Install
 
 ```bash
-npm install @forgekit/lp
+npm install @forgekit-labs/lp
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install @forgekit/lp
 Use `liquidate` to run the full tier-aware flow:
 
 ```js
-import { liquidate } from '@forgekit/lp';
+import { liquidate } from '@forgekit-labs/lp';
 
 // Quick tier: burn 70%, transfer 10% to creator, keep 20% as platform
 const { distribute } = await liquidate('my-pool')
@@ -39,7 +39,7 @@ const { lock, transfer } = await liquidate('my-pool')
 Or call the primitives directly:
 
 ```js
-import { distribute, lock, transfer } from '@forgekit/lp';
+import { distribute, lock, transfer } from '@forgekit-labs/lp';
 ```
 
 Every primitive is idempotent. If the operation has already run, `.send()` returns `{ alreadyDone: true }` without submitting a second transaction.
@@ -47,7 +47,7 @@ Every primitive is idempotent. If the operation has already run, `.send()` retur
 ## Error Handling
 
 ```js
-import { liquidate, ForgeTxError, ForgeRpcError } from '@forgekit/lp';
+import { liquidate, ForgeTxError, ForgeRpcError } from '@forgekit-labs/lp';
 
 try {
   await liquidate('my-pool').tier('quick').lpMint(mint).creator(wallet).wallet(secretKey).send();

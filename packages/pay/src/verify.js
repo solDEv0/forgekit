@@ -1,5 +1,5 @@
 import { Connection, PublicKey } from '@solana/web3.js';
-import { ForgeValidationError, ForgeRpcError, ForgePaymentError } from '@forgekit/errors';
+import { ForgeValidationError, ForgeRpcError, ForgePaymentError } from '@forgekit-labs/errors';
 
 // Mainnet requires 'finalized' for Tower BFT max lockout (rollback-proof).
 // Devnet 'confirmed' is sufficient and keeps testing fast.

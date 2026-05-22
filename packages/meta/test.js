@@ -19,7 +19,7 @@ try {
     .describe({
       name:        'ForgeKit Test',
       symbol:      'FKT',
-      description: 'A test upload from @forgekit/meta.',
+      description: 'A test upload from @forgekit-labs/meta.',
     })
     .attributes([
       { trait_type: 'Environment', value: 'Test'  },

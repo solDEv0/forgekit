@@ -7,7 +7,7 @@ import {
   createTransferCheckedInstruction,
   createAssociatedTokenAccountIdempotentInstruction,
 } from '@solana/spl-token';
-import { ForgeRpcError, ForgeTxError } from '@forgekit/errors';
+import { ForgeRpcError, ForgeTxError } from '@forgekit-labs/errors';
 
 export function makeConnection(rpcUrl) {
   return new Connection(rpcUrl, 'confirmed');

@@ -1,17 +1,17 @@
-# @forgekit/token
+# @forgekit-labs/token
 
 Mint Solana tokens with authority revocations and burn in one atomic transaction.
 
 ## Install
 
 ```bash
-npm install @forgekit/token
+npm install @forgekit-labs/token
 ```
 
 ## Usage
 
 ```js
-import { mint } from '@forgekit/token';
+import { mint } from '@forgekit-labs/token';
 
 const { signature, mintAddress, supply, burned, revoked } = await mint('my-token')
   .supply(1_000_000_000)
@@ -32,7 +32,7 @@ Authority revocation order is fixed: freeze is always revoked before mint. Rever
 ## Error Handling
 
 ```js
-import { mint, ForgeTxError, ForgeRpcError } from '@forgekit/token';
+import { mint, ForgeTxError, ForgeRpcError } from '@forgekit-labs/token';
 
 try {
   await mint('my-token').supply(1_000_000_000).wallet(secretKey).send();

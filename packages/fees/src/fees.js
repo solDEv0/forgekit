@@ -1,4 +1,4 @@
-import { ForgeValidationError } from '@forgekit/errors';
+import { ForgeValidationError } from '@forgekit-labs/errors';
 import {
   LP_SEED_MIN_SOL,
   PLATFORM_FEE_LAMPORTS,

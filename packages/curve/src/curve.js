@@ -1,4 +1,4 @@
-import { ForgeValidationError } from '@forgekit/errors';
+import { ForgeValidationError } from '@forgekit-labs/errors';
 import { progress, marketCap } from './math.js';
 
 /**

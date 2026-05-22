@@ -1,5 +1,5 @@
 export { fees } from './fees.js';
-export { ForgeError, ForgeValidationError } from '@forgekit/errors';
+export { ForgeError, ForgeValidationError } from '@forgekit-labs/errors';
 export {
   LP_SEED_MIN_SOL,
   LP_SEED_MIN_LAMPORTS,

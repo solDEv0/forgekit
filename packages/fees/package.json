@@ -1,5 +1,5 @@
 {
-  "name": "@forgekit/fees",
+  "name": "@forgekit-labs/fees",
   "version": "0.1.0",
   "description": "Launchpad fee schedule. Platform fees, LP splits, swap rates, and total payment amounts. Pure math, zero dependencies, no network.",
   "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/solDEv0/forgekit/tree/main/packages/fees#readme",
   "bugs": "https://github.com/solDEv0/forgekit/issues",
   "dependencies": {
-    "@forgekit/errors": "^0.1.0"
+    "@forgekit-labs/errors": "^0.1.0"
   },
   "keywords": [
     "solana",

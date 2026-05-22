@@ -220,7 +220,7 @@ async function testPayOnDevnet() {
 
 // ── Run ───────────────────────────────────────────────────────────────────────
 
-console.log('--- @forgekit/pay ---');
+console.log('--- @forgekit-labs/pay ---');
 testValidation();
 await testPayOnDevnet();
 await new Promise(r => setTimeout(r, 200));

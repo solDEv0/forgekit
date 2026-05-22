@@ -6,4 +6,4 @@ export {
   ForgeValidationError,
   ForgeRpcError,
   ForgePaymentError,
-} from '@forgekit/errors';
+} from '@forgekit-labs/errors';

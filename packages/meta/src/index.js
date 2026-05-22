@@ -5,4 +5,4 @@ export {
   ForgeUploadError,
   ForgeBalanceError,
   ForgeTimeoutError,
-} from '@forgekit/errors';
+} from '@forgekit-labs/errors';

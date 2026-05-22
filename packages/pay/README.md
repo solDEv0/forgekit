@@ -1,11 +1,11 @@
-# @forgekit/pay
+# @forgekit-labs/pay
 
 Build and verify SOL payment transactions. Unsigned v0 tx for frontend signing, on-chain verification with exact-amount and sender checks.
 
 ## Install
 
 ```bash
-npm install @forgekit/pay
+npm install @forgekit-labs/pay
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install @forgekit/pay
 Build an unsigned payment transaction for the frontend to sign:
 
 ```js
-import { pay } from '@forgekit/pay';
+import { pay } from '@forgekit-labs/pay';
 
 const { transaction, blockhash, lastValidBlockHeight } = await pay('my-launch-fee')
   .from('3kYxg...')
@@ -26,7 +26,7 @@ const { transaction, blockhash, lastValidBlockHeight } = await pay('my-launch-fe
 Verify the payment landed on-chain with the right sender, recipient, and amount:
 
 ```js
-import { verify } from '@forgekit/pay';
+import { verify } from '@forgekit-labs/pay';
 
 const { slot } = await verify('my-launch-fee')
   .signature('2dZUE...')
@@ -42,7 +42,7 @@ const { slot } = await verify('my-launch-fee')
 ## Error Handling
 
 ```js
-import { verify, ForgePaymentError, ForgeRpcError } from '@forgekit/pay';
+import { verify, ForgePaymentError, ForgeRpcError } from '@forgekit-labs/pay';
 
 try {
   await verify('my-launch-fee')

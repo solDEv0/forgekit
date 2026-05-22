@@ -8,7 +8,7 @@ import {
   ForgeUploadError,
   ForgeBalanceError,
   ForgeTimeoutError,
-} from '@forgekit/errors';
+} from '@forgekit-labs/errors';
 
 const ARWEAVE_GATEWAY = 'https://arweave.net';
 const FREE_TIER_BYTES = 100 * 1024;

@@ -5,7 +5,7 @@ import {
   TransactionMessage,
   VersionedTransaction,
 } from '@solana/web3.js';
-import { ForgeValidationError, ForgeRpcError } from '@forgekit/errors';
+import { ForgeValidationError, ForgeRpcError } from '@forgekit-labs/errors';
 
 class PayBuilder {
   #name;

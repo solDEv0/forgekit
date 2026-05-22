@@ -6,4 +6,4 @@ export {
   ForgeTxError,
   ForgeRpcError,
   ForgePoolExistsError,
-} from '@forgekit/errors';
+} from '@forgekit-labs/errors';

@@ -1,5 +1,5 @@
 {
-  "name": "@forgekit/meta",
+  "name": "@forgekit-labs/meta",
   "version": "0.1.0",
   "description": "Upload token and NFT metadata to Arweave via Turbo. One call, permanent storage.",
   "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",
@@ -29,7 +29,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@forgekit/errors": "^0.1.0",
+    "@forgekit-labs/errors": "^0.1.0",
     "@ardrive/turbo-sdk": "^1.40.2",
     "bs58": "^6.0.0",
     "uuid": "^9.0.1"

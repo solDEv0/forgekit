@@ -212,6 +212,6 @@ assert('0%',                basisOf(999_999n, 0)  === 0n);
 
 // ── Summary ───────────────────────────────────────────────────────────────────
 
-console.log(`\n--- @forgekit/curve ---`);
+console.log(`\n--- @forgekit-labs/curve ---`);
 console.log(`  ${passed} passed, ${failed} failed`);
 if (failed > 0) process.exitCode = 1;

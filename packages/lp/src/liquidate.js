@@ -1,4 +1,4 @@
-import { ForgeValidationError } from '@forgekit/errors';
+import { ForgeValidationError } from '@forgekit-labs/errors';
 import { distribute } from './distribute.js';
 import { lock }       from './lock.js';
 import { transfer }   from './transfer.js';

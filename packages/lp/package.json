@@ -1,5 +1,5 @@
 {
-  "name": "@forgekit/lp",
+  "name": "@forgekit-labs/lp",
   "version": "0.1.0",
   "description": "LP token distribution after Raydium CPMM pool creation. Burn, lock, transfer, individually or as a tier-aware pipeline.",
   "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",
@@ -29,7 +29,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@forgekit/errors": "^0.1.0",
+    "@forgekit-labs/errors": "^0.1.0",
     "@solana/web3.js": "^1.98.0",
     "@solana/spl-token": "^0.4.9",
     "@raydium-io/raydium-sdk-v2": "0.2.44-alpha",

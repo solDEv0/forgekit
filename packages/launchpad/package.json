@@ -1,5 +1,5 @@
 {
-  "name": "@forgekit/launchpad",
+  "name": "@forgekit-labs/launchpad",
   "version": "0.1.0",
   "description": "Create Raydium CPMM liquidity pools in one call. Validation, idempotency, and fee config included.",
   "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",
@@ -28,7 +28,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@forgekit/errors": "^0.1.0",
+    "@forgekit-labs/errors": "^0.1.0",
     "@solana/web3.js": "^1.98.0",
     "@solana/spl-token": "^0.4.9",
     "@raydium-io/raydium-sdk-v2": "0.2.44-alpha",

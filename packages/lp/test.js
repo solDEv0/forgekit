@@ -251,7 +251,7 @@ async function testLiquidateOnDevnet() {
 
 // ── Run ───────────────────────────────────────────────────────────────────────
 
-console.log('--- @forgekit/lp ---');
+console.log('--- @forgekit-labs/lp ---');
 testValidation();
 await testLiquidateOnDevnet();
 console.log('\nDone.');

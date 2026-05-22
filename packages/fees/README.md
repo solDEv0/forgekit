@@ -1,17 +1,17 @@
-# @forgekit/fees
+# @forgekit-labs/fees
 
 Launchpad fee schedule. Platform fees, LP splits, swap rates, and total payment amounts. Pure math, no network, zero third-party dependencies.
 
 ## Install
 
 ```bash
-npm install @forgekit/fees
+npm install @forgekit-labs/fees
 ```
 
 ## Usage
 
 ```js
-import { fees } from '@forgekit/fees';
+import { fees } from '@forgekit-labs/fees';
 
 const f = fees('my-launch')
   .tier('quick')
@@ -46,13 +46,13 @@ import {
   PLATFORM_FEE_LAMPORTS,
   LP_SPLIT_BPS,
   SWAP_FEE_RATE,
-} from '@forgekit/fees';
+} from '@forgekit-labs/fees';
 ```
 
 ## Error Handling
 
 ```js
-import { fees, ForgeValidationError } from '@forgekit/fees';
+import { fees, ForgeValidationError } from '@forgekit-labs/fees';
 
 try {
   fees('my-launch').seed(0.3); // below 0.65 SOL minimum

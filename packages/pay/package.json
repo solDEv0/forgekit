@@ -1,5 +1,5 @@
 {
-  "name": "@forgekit/pay",
+  "name": "@forgekit-labs/pay",
   "version": "0.1.0",
   "description": "Build and verify SOL payment transactions. Unsigned v0 tx for frontend signing, on-chain verification with exact-amount and sender checks.",
   "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",
@@ -26,7 +26,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@forgekit/errors": "^0.1.0",
+    "@forgekit-labs/errors": "^0.1.0",
     "@solana/web3.js": "^1.98.0"
   }
 }

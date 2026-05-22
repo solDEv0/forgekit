@@ -1,17 +1,17 @@
-# @forgekit/launchpad
+# @forgekit-labs/launchpad
 
 Create Raydium CPMM liquidity pools in one call. Validation, idempotency, and fee config included.
 
 ## Install
 
 ```bash
-npm install @forgekit/launchpad
+npm install @forgekit-labs/launchpad
 ```
 
 ## Usage
 
 ```js
-import { launch } from '@forgekit/launchpad';
+import { launch } from '@forgekit-labs/launchpad';
 
 const { poolId, lpMint, signature } = await launch('my-pool')
   .mint('J1rNqz1...')
@@ -33,7 +33,7 @@ Mainnet and devnet are auto-detected from the RPC URL. Program IDs and fee confi
 The Raydium pool PDA is deterministic. If a pool for this token already exists, `.send()` throws `ForgePoolExistsError` with the existing `poolId` attached:
 
 ```js
-import { launch, ForgePoolExistsError } from '@forgekit/launchpad';
+import { launch, ForgePoolExistsError } from '@forgekit-labs/launchpad';
 
 try {
   await launch('my-pool').mint(mint).decimals(6).tokens(500_000_000).seed(0.65).wallet(secretKey).send();
@@ -47,7 +47,7 @@ try {
 ## Error Handling
 
 ```js
-import { launch, ForgeTxError, ForgeRpcError } from '@forgekit/launchpad';
+import { launch, ForgeTxError, ForgeRpcError } from '@forgekit-labs/launchpad';
 
 try {
   await launch('my-pool')./* ... */.send();

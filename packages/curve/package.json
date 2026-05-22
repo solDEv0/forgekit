@@ -1,5 +1,5 @@
 {
-  "name": "@forgekit/curve",
+  "name": "@forgekit-labs/curve",
   "version": "0.1.0",
   "description": "Bonding curve math. Starting price, graduation threshold, progress, market cap. Pure functions, no network, no third-party dependencies.",
   "author": "Res <support@crxcible.io> (https://github.com/solDEv0)",
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/solDEv0/forgekit/tree/main/packages/curve#readme",
   "bugs": "https://github.com/solDEv0/forgekit/issues",
   "dependencies": {
-    "@forgekit/errors": "^0.1.0"
+    "@forgekit-labs/errors": "^0.1.0"
   },
   "keywords": [
     "solana",

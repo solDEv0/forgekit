@@ -10,23 +10,23 @@ Built from production experience. Every sharp edge in here was discovered the ha
 
 | Package | Description |
 |---|---|
-| [`@forgekit/errors`](./packages/errors) | Canonical error classes shared across the toolkit |
-| [`@forgekit/meta`](./packages/meta) | Upload token and NFT metadata to Arweave via Turbo |
-| [`@forgekit/token`](./packages/token) | Mint Solana tokens with burn and authority revocations |
-| [`@forgekit/launchpad`](./packages/launchpad) | Create Raydium CPMM liquidity pools |
-| [`@forgekit/lp`](./packages/lp) | Distribute, lock, and transfer LP tokens after pool creation |
-| [`@forgekit/pay`](./packages/pay) | Build and verify SOL payment transactions |
-| [`@forgekit/curve`](./packages/curve) | Bonding curve math: start price, graduation, progress, market cap |
-| [`@forgekit/fees`](./packages/fees) | Fee schedule: platform fees, LP splits, swap rates |
+| [`@forgekit-labs/errors`](./packages/errors) | Canonical error classes shared across the toolkit |
+| [`@forgekit-labs/meta`](./packages/meta) | Upload token and NFT metadata to Arweave via Turbo |
+| [`@forgekit-labs/token`](./packages/token) | Mint Solana tokens with burn and authority revocations |
+| [`@forgekit-labs/launchpad`](./packages/launchpad) | Create Raydium CPMM liquidity pools |
+| [`@forgekit-labs/lp`](./packages/lp) | Distribute, lock, and transfer LP tokens after pool creation |
+| [`@forgekit-labs/pay`](./packages/pay) | Build and verify SOL payment transactions |
+| [`@forgekit-labs/curve`](./packages/curve) | Bonding curve math: start price, graduation, progress, market cap |
+| [`@forgekit-labs/fees`](./packages/fees) | Fee schedule: platform fees, LP splits, swap rates |
 
 ## Quickstart
 
 A full launch pipeline composing three packages:
 
 ```js
-import { cast }   from '@forgekit/meta';
-import { mint }   from '@forgekit/token';
-import { launch } from '@forgekit/launchpad';
+import { cast }   from '@forgekit-labs/meta';
+import { mint }   from '@forgekit-labs/token';
+import { launch } from '@forgekit-labs/launchpad';
 
 // 1. Upload metadata to Arweave
 const { uri } = await cast('my-token')
@@ -65,14 +65,14 @@ Every package is independently installable. Pick only what you need.
 Every package exports a single named function that reads like an action:
 
 ```js
-cast('my-token')        // @forgekit/meta
-mint('my-token')        // @forgekit/token
-launch('my-pool')       // @forgekit/launchpad
-liquidate('my-pool')    // @forgekit/lp
-pay('my-launch-fee')    // @forgekit/pay
-verify('my-launch-fee') // @forgekit/pay
-curve('my-token')       // @forgekit/curve
-fees('my-launch')       // @forgekit/fees
+cast('my-token')        // @forgekit-labs/meta
+mint('my-token')        // @forgekit-labs/token
+launch('my-pool')       // @forgekit-labs/launchpad
+liquidate('my-pool')    // @forgekit-labs/lp
+pay('my-launch-fee')    // @forgekit-labs/pay
+verify('my-launch-fee') // @forgekit-labs/pay
+curve('my-token')       // @forgekit-labs/curve
+fees('my-launch')       // @forgekit-labs/fees
 ```
 
 The argument is always a name. A human identifier for what you are building. It anchors the intent before anything else is configured.
@@ -105,7 +105,7 @@ No raw stack traces. Every error has:
 | `cause` | The original error, if one exists |
 | `retry` | Boolean. Safe to retry this operation? |
 
-Error classes are shared across the toolkit via `@forgekit/errors`. Branch on `err.code` (or `err.name`) for cross-package safety.
+Error classes are shared across the toolkit via `@forgekit-labs/errors`. Branch on `err.code` (or `err.name`) for cross-package safety.
 
 ### Production knowledge baked in
 
@@ -119,7 +119,7 @@ The validation and defaults reflect real production failures, not documentation 
 
 ### One atomic transaction
 
-Where possible, everything happens in a single VersionedTransaction (V0). `@forgekit/token` mints the full supply, burns the configured percentage, and revokes authorities all in one transaction. Either everything succeeds or nothing does.
+Where possible, everything happens in a single VersionedTransaction (V0). `@forgekit-labs/token` mints the full supply, burns the configured percentage, and revokes authorities all in one transaction. Either everything succeeds or nothing does.
 
 ### Private fields, no leaking state
 
@@ -131,13 +131,13 @@ Every package has been tested against real networks, not mocks.
 
 | Package | Tests | Verified |
 |---|---|---|
-| `@forgekit/meta` | 2 uploads | Arweave |
-| `@forgekit/token` | 16 | Devnet mint, burn, authority revocation |
-| `@forgekit/launchpad` | 20 | Devnet CPMM pool creation, idempotency |
-| `@forgekit/lp` | 31 | Devnet distribute, lock, transfer |
-| `@forgekit/pay` | 21 | Devnet build, sign, broadcast, verify |
-| `@forgekit/curve` | 57 | Pure math, BigInt-safe |
-| `@forgekit/fees` | 57 | Pure math |
+| `@forgekit-labs/meta` | 2 uploads | Arweave |
+| `@forgekit-labs/token` | 16 | Devnet mint, burn, authority revocation |
+| `@forgekit-labs/launchpad` | 20 | Devnet CPMM pool creation, idempotency |
+| `@forgekit-labs/lp` | 31 | Devnet distribute, lock, transfer |
+| `@forgekit-labs/pay` | 21 | Devnet build, sign, broadcast, verify |
+| `@forgekit-labs/curve` | 57 | Pure math, BigInt-safe |
+| `@forgekit-labs/fees` | 57 | Pure math |
 
 ## Running tests
 
