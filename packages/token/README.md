@@ -29,6 +29,10 @@ Everything happens in a single VersionedTransaction (V0): account creation, mint
 
 Authority revocation order is fixed: freeze is always revoked before mint. Reversing the order can leave a token in an inconsistent state.
 
+## Where this runs
+
+`@forgekit-labs/token` runs server-side. The wallet you pass to `.wallet()` signs the mint transaction, so it should be your own platform wallet, running in your backend. It is not a browser package, and it should never receive an end user's personal key. In a launchpad, end users sign only their own payment, through `@forgekit-labs/pay`.
+
 ## Error Handling
 
 ```js

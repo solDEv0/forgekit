@@ -22,6 +22,10 @@ const { uri } = await cast('my-token')
 console.log(uri); // https://arweave.net/...
 ```
 
+## Where this runs
+
+`@forgekit-labs/meta` runs server-side. The wallet you pass to `.wallet()` authenticates the Turbo upload, so it should be your own platform wallet, running in your backend. It is not a browser package, and it should never receive an end user's personal key. In a launchpad, end users sign only their own payment, through `@forgekit-labs/pay`.
+
 ## Error Handling
 
 ```js

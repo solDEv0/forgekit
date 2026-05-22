@@ -125,6 +125,10 @@ Where possible, everything happens in a single VersionedTransaction (V0). `@forg
 
 Every builder uses JavaScript private class fields (`#field`). The internal state of a builder is never accessible from outside. You configure it through the public API or not at all.
 
+### Keys stay server-side
+
+The packages that sign transactions (`meta`, `token`, `launchpad`, `lp`) run in your backend with your own platform wallet. They are not browser packages. End users of a launchpad sign only their own payment, through `pay`, which builds an unsigned transaction and never receives a key.
+
 ## Verified on chain
 
 Every package has been tested against real networks, not mocks.

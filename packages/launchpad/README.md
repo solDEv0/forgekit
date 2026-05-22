@@ -44,6 +44,10 @@ try {
 }
 ```
 
+## Where this runs
+
+`@forgekit-labs/launchpad` runs server-side. The wallet you pass to `.wallet()` signs the pool creation transaction, so it should be your own platform wallet, running in your backend. It is not a browser package, and it should never receive an end user's personal key. In a launchpad, end users sign only their own payment, through `@forgekit-labs/pay`.
+
 ## Error Handling
 
 ```js
