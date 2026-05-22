@@ -21,17 +21,17 @@ function testValidation() {
   console.log('\nValidation');
 
   const cases = [
-    ['rejects missing name',          () => mint(),                                         ForgeValidationError],
-    ['rejects non-string name',       () => mint(42),                                        ForgeValidationError],
-    ['rejects zero supply',           () => mint('x').supply(0),                             ForgeValidationError],
-    ['rejects negative supply',       () => mint('x').supply(-1),                            ForgeValidationError],
-    ['rejects decimals out of range', () => mint('x').supply(1).decimals(10),                ForgeValidationError],
-    ['rejects burn over 50%',         () => mint('x').supply(1).burn(51),                    ForgeValidationError],
-    ['rejects unknown authority',     () => mint('x').supply(1).revoke('update'),            ForgeValidationError],
-    ['rejects non-Uint8Array wallet', () => mint('x').supply(1).wallet('bad'),               ForgeValidationError],
-    ['rejects bad rpc url',           () => mint('x').supply(1).rpc('not-a-url'),            ForgeValidationError],
+    ['rejects missing name',          () => mint(), ForgeValidationError],
+    ['rejects non-string name',       () => mint(42), ForgeValidationError],
+    ['rejects zero supply',           () => mint('x').supply(0), ForgeValidationError],
+    ['rejects negative supply',       () => mint('x').supply(-1), ForgeValidationError],
+    ['rejects decimals out of range', () => mint('x').supply(1).decimals(10), ForgeValidationError],
+    ['rejects burn over 50%',         () => mint('x').supply(1).burn(51), ForgeValidationError],
+    ['rejects unknown authority',     () => mint('x').supply(1).revoke('update'), ForgeValidationError],
+    ['rejects non-Uint8Array wallet', () => mint('x').supply(1).wallet('bad'), ForgeValidationError],
+    ['rejects bad rpc url',           () => mint('x').supply(1).rpc('not-a-url'), ForgeValidationError],
     ['rejects send with no supply',   () => mint('x').wallet(Keypair.generate().secretKey).send(), ForgeValidationError],
-    ['rejects send with no wallet',   () => mint('x').supply(1).send(),                      ForgeValidationError],
+    ['rejects send with no wallet',   () => mint('x').supply(1).send(), ForgeValidationError],
   ];
 
   for (const [label, fn, ErrorClass] of cases) {

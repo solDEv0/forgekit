@@ -41,20 +41,20 @@ function assertClose(label, actual, expected, tolerance = 1e-10) {
 
 console.log('\ncurve() validation');
 
-assertThrows('rejects missing name',          () => curve(),           ForgeValidationError);
-assertThrows('rejects non-string name',       () => curve(42),         ForgeValidationError);
-assertThrows('rejects zero supply',           () => curve('x').supply(0),           ForgeValidationError);
-assertThrows('rejects negative supply',       () => curve('x').supply(-1),          ForgeValidationError);
-assertThrows('rejects bad decimals',          () => curve('x').decimals(19),        ForgeValidationError);
-assertThrows('rejects zero solPrice',         () => curve('x').solPrice(0),         ForgeValidationError);
-assertThrows('rejects negative solPrice',     () => curve('x').solPrice(-5),        ForgeValidationError);
+assertThrows('rejects missing name',          () => curve(), ForgeValidationError);
+assertThrows('rejects non-string name',       () => curve(42), ForgeValidationError);
+assertThrows('rejects zero supply',           () => curve('x').supply(0), ForgeValidationError);
+assertThrows('rejects negative supply',       () => curve('x').supply(-1), ForgeValidationError);
+assertThrows('rejects bad decimals',          () => curve('x').decimals(19), ForgeValidationError);
+assertThrows('rejects zero solPrice',         () => curve('x').solPrice(0), ForgeValidationError);
+assertThrows('rejects negative solPrice',     () => curve('x').solPrice(-5), ForgeValidationError);
 assertThrows('startPrice without supply',     () => curve('x').solPrice(180).startPrice(5_000), ForgeValidationError);
-assertThrows('startPrice without solPrice',   () => curve('x').supply(1e9).startPrice(5_000),   ForgeValidationError);
-assertThrows('graduationAt without solPrice', () => curve('x').graduationAt(50_000),             ForgeValidationError);
-assertThrows('marketCap without supply',      () => curve('x').solPrice(180).marketCap(0.001),   ForgeValidationError);
-assertThrows('marketCap without solPrice',    () => curve('x').supply(1e9).marketCap(0.001),     ForgeValidationError);
-assertThrows('progress missing raised',       () => curve('x').progress(null, 1000n),            ForgeValidationError);
-assertThrows('progress missing threshold',    () => curve('x').progress(500n, null),             ForgeValidationError);
+assertThrows('startPrice without solPrice',   () => curve('x').supply(1e9).startPrice(5_000), ForgeValidationError);
+assertThrows('graduationAt without solPrice', () => curve('x').graduationAt(50_000), ForgeValidationError);
+assertThrows('marketCap without supply',      () => curve('x').solPrice(180).marketCap(0.001), ForgeValidationError);
+assertThrows('marketCap without solPrice',    () => curve('x').supply(1e9).marketCap(0.001), ForgeValidationError);
+assertThrows('progress missing raised',       () => curve('x').progress(null, 1000n), ForgeValidationError);
+assertThrows('progress missing threshold',    () => curve('x').progress(500n, null), ForgeValidationError);
 
 // ── curve() compute startPrice ─────────────────────────────────────────────
 

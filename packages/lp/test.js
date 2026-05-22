@@ -27,17 +27,17 @@ function testValidation() {
   const mint32 = 'abc123abc123abc123abc123abc123ab';
 
   const distributeCases = [
-    ['rejects missing name',          () => distribute(),                                                                           ForgeValidationError],
-    ['rejects non-string name',       () => distribute(99),                                                                         ForgeValidationError],
-    ['rejects bad lpMint',            () => distribute('x').lpMint(123),                                                            ForgeValidationError],
-    ['rejects invalid lpMint pubkey', () => distribute('x').lpMint('notakey'),                                                      ForgeValidationError],
-    ['rejects bad supply',            () => distribute('x').lpMint(mint32).supply('abc'),                                           ForgeValidationError],
-    ['rejects zero supply',           () => distribute('x').lpMint(mint32).supply('0'),                                             ForgeValidationError],
-    ['rejects bad platform bps',      () => distribute('x').lpMint(mint32).supply('1000').platform(10001),                          ForgeValidationError],
-    ['rejects bad creator bps',       () => distribute('x').lpMint(mint32).supply('1000').platform(2000).creator(10001, mint32),    ForgeValidationError],
-    ['rejects bad creator wallet',    () => distribute('x').lpMint(mint32).supply('1000').platform(2000).creator(1000, 'notakey'),  ForgeValidationError],
-    ['rejects non-Uint8Array wallet', () => distribute('x').lpMint(mint32).supply('1000').platform(2000).wallet('str'),            ForgeValidationError],
-    ['rejects bad rpc url',           () => distribute('x').lpMint(mint32).supply('1000').platform(2000).wallet(key).rpc('nope'),  ForgeValidationError],
+    ['rejects missing name',          () => distribute(), ForgeValidationError],
+    ['rejects non-string name',       () => distribute(99), ForgeValidationError],
+    ['rejects bad lpMint',            () => distribute('x').lpMint(123), ForgeValidationError],
+    ['rejects invalid lpMint pubkey', () => distribute('x').lpMint('notakey'), ForgeValidationError],
+    ['rejects bad supply',            () => distribute('x').lpMint(mint32).supply('abc'), ForgeValidationError],
+    ['rejects zero supply',           () => distribute('x').lpMint(mint32).supply('0'), ForgeValidationError],
+    ['rejects bad platform bps',      () => distribute('x').lpMint(mint32).supply('1000').platform(10001), ForgeValidationError],
+    ['rejects bad creator bps',       () => distribute('x').lpMint(mint32).supply('1000').platform(2000).creator(10001, mint32), ForgeValidationError],
+    ['rejects bad creator wallet',    () => distribute('x').lpMint(mint32).supply('1000').platform(2000).creator(1000, 'notakey'), ForgeValidationError],
+    ['rejects non-Uint8Array wallet', () => distribute('x').lpMint(mint32).supply('1000').platform(2000).wallet('str'), ForgeValidationError],
+    ['rejects bad rpc url',           () => distribute('x').lpMint(mint32).supply('1000').platform(2000).wallet(key).rpc('nope'), ForgeValidationError],
   ];
 
   runCases(distributeCases);
@@ -45,11 +45,11 @@ function testValidation() {
   console.log('\nValidation lock()');
 
   const lockCases = [
-    ['rejects missing name',          () => lock(),                                                                     ForgeValidationError],
-    ['rejects bad poolId',            () => lock('x').poolId('notakey'),                                                ForgeValidationError],
-    ['rejects bad lpMint',            () => lock('x').poolId(mint32).lpMint('notakey'),                                 ForgeValidationError],
-    ['rejects basis out of range',    () => lock('x').poolId(mint32).lpMint(mint32).basis(0),                           ForgeValidationError],
-    ['rejects non-Uint8Array wallet', () => lock('x').poolId(mint32).lpMint(mint32).basis(7500).wallet('str'),          ForgeValidationError],
+    ['rejects missing name',          () => lock(), ForgeValidationError],
+    ['rejects bad poolId',            () => lock('x').poolId('notakey'), ForgeValidationError],
+    ['rejects bad lpMint',            () => lock('x').poolId(mint32).lpMint('notakey'), ForgeValidationError],
+    ['rejects basis out of range',    () => lock('x').poolId(mint32).lpMint(mint32).basis(0), ForgeValidationError],
+    ['rejects non-Uint8Array wallet', () => lock('x').poolId(mint32).lpMint(mint32).basis(7500).wallet('str'), ForgeValidationError],
     ['rejects bad rpc url',           () => lock('x').poolId(mint32).lpMint(mint32).basis(7500).wallet(key).rpc('no'), ForgeValidationError],
   ];
 
@@ -58,13 +58,13 @@ function testValidation() {
   console.log('\nValidation transfer()');
 
   const transferCases = [
-    ['rejects missing name',          () => transfer(),                                                                                  ForgeValidationError],
-    ['rejects bad lpMint',            () => transfer('x').lpMint('notakey'),                                                             ForgeValidationError],
-    ['rejects bad platform bps',      () => transfer('x').lpMint(mint32).platform(-1),                                                   ForgeValidationError],
-    ['rejects bad creator bps',       () => transfer('x').lpMint(mint32).platform(1000).creator(0, mint32),                              ForgeValidationError],
-    ['rejects bad creator wallet',    () => transfer('x').lpMint(mint32).platform(1000).creator(1500, 'notakey'),                        ForgeValidationError],
-    ['rejects non-Uint8Array wallet', () => transfer('x').lpMint(mint32).platform(1000).creator(1500, mint32).wallet('str'),             ForgeValidationError],
-    ['rejects bad rpc url',           () => transfer('x').lpMint(mint32).platform(1000).creator(1500, mint32).wallet(key).rpc('nope'),   ForgeValidationError],
+    ['rejects missing name',          () => transfer(), ForgeValidationError],
+    ['rejects bad lpMint',            () => transfer('x').lpMint('notakey'), ForgeValidationError],
+    ['rejects bad platform bps',      () => transfer('x').lpMint(mint32).platform(-1), ForgeValidationError],
+    ['rejects bad creator bps',       () => transfer('x').lpMint(mint32).platform(1000).creator(0, mint32), ForgeValidationError],
+    ['rejects bad creator wallet',    () => transfer('x').lpMint(mint32).platform(1000).creator(1500, 'notakey'), ForgeValidationError],
+    ['rejects non-Uint8Array wallet', () => transfer('x').lpMint(mint32).platform(1000).creator(1500, mint32).wallet('str'), ForgeValidationError],
+    ['rejects bad rpc url',           () => transfer('x').lpMint(mint32).platform(1000).creator(1500, mint32).wallet(key).rpc('nope'), ForgeValidationError],
   ];
 
   runCases(transferCases);
@@ -72,14 +72,14 @@ function testValidation() {
   console.log('\nValidation liquidate()');
 
   const liquidateCases = [
-    ['rejects missing name',              () => liquidate(),                                                                                      ForgeValidationError],
-    ['rejects bad tier',                  () => liquidate('x').tier('ultra'),                                                                     ForgeValidationError],
-    ['rejects send with no tier',         () => liquidate('x').lpMint(mint32).creator(mint32).wallet(key).send(),                                ForgeValidationError],
-    ['rejects send with no lpMint',       () => liquidate('x').tier('quick').creator(mint32).wallet(key).supply('1000').send(),                  ForgeValidationError],
-    ['rejects send with no creator',      () => liquidate('x').tier('quick').lpMint(mint32).wallet(key).supply('1000').send(),                   ForgeValidationError],
-    ['rejects send with no wallet',       () => liquidate('x').tier('quick').lpMint(mint32).creator(mint32).supply('1000').send(),               ForgeValidationError],
-    ['quick tier requires supply',        () => liquidate('x').tier('quick').lpMint(mint32).creator(mint32).wallet(key).send(),                  ForgeValidationError],
-    ['safe tier requires poolId',         () => liquidate('x').tier('safe').lpMint(mint32).creator(mint32).wallet(key).send(),                   ForgeValidationError],
+    ['rejects missing name',              () => liquidate(), ForgeValidationError],
+    ['rejects bad tier',                  () => liquidate('x').tier('ultra'), ForgeValidationError],
+    ['rejects send with no tier',         () => liquidate('x').lpMint(mint32).creator(mint32).wallet(key).send(), ForgeValidationError],
+    ['rejects send with no lpMint',       () => liquidate('x').tier('quick').creator(mint32).wallet(key).supply('1000').send(), ForgeValidationError],
+    ['rejects send with no creator',      () => liquidate('x').tier('quick').lpMint(mint32).wallet(key).supply('1000').send(), ForgeValidationError],
+    ['rejects send with no wallet',       () => liquidate('x').tier('quick').lpMint(mint32).creator(mint32).supply('1000').send(), ForgeValidationError],
+    ['quick tier requires supply',        () => liquidate('x').tier('quick').lpMint(mint32).creator(mint32).wallet(key).send(), ForgeValidationError],
+    ['safe tier requires poolId',         () => liquidate('x').tier('safe').lpMint(mint32).creator(mint32).wallet(key).send(), ForgeValidationError],
   ];
 
   runCases(liquidateCases);

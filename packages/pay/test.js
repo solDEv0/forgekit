@@ -18,17 +18,17 @@ function testValidation() {
   const addr = 'abc123abc123abc123abc123abc123ab';
 
   const payCases = [
-    ['rejects missing name',        () => pay(),                                                    ForgeValidationError],
-    ['rejects non-string name',     () => pay(42),                                                  ForgeValidationError],
-    ['rejects bad from address',    () => pay('x').from('notakey'),                                 ForgeValidationError],
-    ['rejects bad to address',      () => pay('x').from(addr).to('notakey'),                        ForgeValidationError],
-    ['rejects zero amount',         () => pay('x').from(addr).to(addr).amount(0),                   ForgeValidationError],
-    ['rejects negative amount',     () => pay('x').from(addr).to(addr).amount(-1),                  ForgeValidationError],
-    ['rejects non-numeric amount',  () => pay('x').from(addr).to(addr).amount('abc'),               ForgeValidationError],
-    ['rejects bad rpc url',         () => pay('x').from(addr).to(addr).amount(1000n).rpc('nope'),   ForgeValidationError],
-    ['rejects build with no from',  () => pay('x').to(addr).amount(1000n).build(),                  ForgeValidationError],
-    ['rejects build with no to',    () => pay('x').from(addr).amount(1000n).build(),                ForgeValidationError],
-    ['rejects build with no amount',() => pay('x').from(addr).to(addr).build(),                     ForgeValidationError],
+    ['rejects missing name',        () => pay(), ForgeValidationError],
+    ['rejects non-string name',     () => pay(42), ForgeValidationError],
+    ['rejects bad from address',    () => pay('x').from('notakey'), ForgeValidationError],
+    ['rejects bad to address',      () => pay('x').from(addr).to('notakey'), ForgeValidationError],
+    ['rejects zero amount',         () => pay('x').from(addr).to(addr).amount(0), ForgeValidationError],
+    ['rejects negative amount',     () => pay('x').from(addr).to(addr).amount(-1), ForgeValidationError],
+    ['rejects non-numeric amount',  () => pay('x').from(addr).to(addr).amount('abc'), ForgeValidationError],
+    ['rejects bad rpc url',         () => pay('x').from(addr).to(addr).amount(1000n).rpc('nope'), ForgeValidationError],
+    ['rejects build with no from',  () => pay('x').to(addr).amount(1000n).build(), ForgeValidationError],
+    ['rejects build with no to',    () => pay('x').from(addr).amount(1000n).build(), ForgeValidationError],
+    ['rejects build with no amount',() => pay('x').from(addr).to(addr).build(), ForgeValidationError],
   ];
 
   runCases(payCases);
@@ -36,16 +36,16 @@ function testValidation() {
   console.log('\nValidation verify()');
 
   const verifyCases = [
-    ['rejects missing name',            () => verify(),                                                                              ForgeValidationError],
-    ['rejects bad signature',           () => verify('x').signature(''),                                                             ForgeValidationError],
-    ['rejects bad sender address',      () => verify('x').signature('sig').sender('notakey'),                                        ForgeValidationError],
-    ['rejects bad recipient address',   () => verify('x').signature('sig').sender(addr).recipient('notakey'),                        ForgeValidationError],
-    ['rejects zero amount',             () => verify('x').signature('sig').sender(addr).recipient(addr).amount(0),                   ForgeValidationError],
-    ['rejects bad rpc url',             () => verify('x').signature('sig').sender(addr).recipient(addr).amount(1000n).rpc('nope'),   ForgeValidationError],
-    ['rejects confirm with no sig',     () => verify('x').sender(addr).recipient(addr).amount(1000n).confirm(),                      ForgeValidationError],
-    ['rejects confirm with no sender',  () => verify('x').signature('sig').recipient(addr).amount(1000n).confirm(),                  ForgeValidationError],
-    ['rejects confirm with no recip',   () => verify('x').signature('sig').sender(addr).amount(1000n).confirm(),                     ForgeValidationError],
-    ['rejects confirm with no amount',  () => verify('x').signature('sig').sender(addr).recipient(addr).confirm(),                   ForgeValidationError],
+    ['rejects missing name',            () => verify(), ForgeValidationError],
+    ['rejects bad signature',           () => verify('x').signature(''), ForgeValidationError],
+    ['rejects bad sender address',      () => verify('x').signature('sig').sender('notakey'), ForgeValidationError],
+    ['rejects bad recipient address',   () => verify('x').signature('sig').sender(addr).recipient('notakey'), ForgeValidationError],
+    ['rejects zero amount',             () => verify('x').signature('sig').sender(addr).recipient(addr).amount(0), ForgeValidationError],
+    ['rejects bad rpc url',             () => verify('x').signature('sig').sender(addr).recipient(addr).amount(1000n).rpc('nope'), ForgeValidationError],
+    ['rejects confirm with no sig',     () => verify('x').sender(addr).recipient(addr).amount(1000n).confirm(), ForgeValidationError],
+    ['rejects confirm with no sender',  () => verify('x').signature('sig').recipient(addr).amount(1000n).confirm(), ForgeValidationError],
+    ['rejects confirm with no recip',   () => verify('x').signature('sig').sender(addr).amount(1000n).confirm(), ForgeValidationError],
+    ['rejects confirm with no amount',  () => verify('x').signature('sig').sender(addr).recipient(addr).confirm(), ForgeValidationError],
   ];
 
   runCases(verifyCases);

@@ -59,18 +59,18 @@ assert('SWAP_FEE_RATE safe = 10000',  SWAP_FEE_RATE.safe === 10_000);
 
 console.log('\nfees() validation');
 
-assertThrows('rejects missing name',     () => fees(),      ForgeValidationError);
-assertThrows('rejects non-string name',  () => fees(42),    ForgeValidationError);
-assertThrows('rejects invalid tier',     () => fees('x').tier('turbo'),  ForgeValidationError);
-assertThrows('rejects zero seed',        () => fees('x').tier('quick').seed(0),    ForgeValidationError);
-assertThrows('rejects negative seed',    () => fees('x').tier('quick').seed(-1),   ForgeValidationError);
-assertThrows('rejects seed below min',   () => fees('x').tier('quick').seed(0.3),  ForgeValidationError);
-assertThrows('platform() without tier',  () => fees('x').platform(),               ForgeValidationError);
-assertThrows('total() without tier',     () => fees('x').seed(0.65).total(),       ForgeValidationError);
-assertThrows('total() without seed',     () => fees('x').tier('quick').total(),    ForgeValidationError);
-assertThrows('split() without tier',     () => fees('x').split(1_000_000n),        ForgeValidationError);
-assertThrows('split() zero supply',      () => fees('x').tier('quick').split(0n),  ForgeValidationError);
-assertThrows('swapRate() without tier',  () => fees('x').swapRate(),               ForgeValidationError);
+assertThrows('rejects missing name',     () => fees(), ForgeValidationError);
+assertThrows('rejects non-string name',  () => fees(42), ForgeValidationError);
+assertThrows('rejects invalid tier',     () => fees('x').tier('turbo'), ForgeValidationError);
+assertThrows('rejects zero seed',        () => fees('x').tier('quick').seed(0), ForgeValidationError);
+assertThrows('rejects negative seed',    () => fees('x').tier('quick').seed(-1), ForgeValidationError);
+assertThrows('rejects seed below min',   () => fees('x').tier('quick').seed(0.3), ForgeValidationError);
+assertThrows('platform() without tier',  () => fees('x').platform(), ForgeValidationError);
+assertThrows('total() without tier',     () => fees('x').seed(0.65).total(), ForgeValidationError);
+assertThrows('total() without seed',     () => fees('x').tier('quick').total(), ForgeValidationError);
+assertThrows('split() without tier',     () => fees('x').split(1_000_000n), ForgeValidationError);
+assertThrows('split() zero supply',      () => fees('x').tier('quick').split(0n), ForgeValidationError);
+assertThrows('swapRate() without tier',  () => fees('x').swapRate(), ForgeValidationError);
 
 // ── fees() quick tier ───────────────────────────────────────────────────────
 
@@ -124,7 +124,7 @@ assert('safe swapRate rate = 10000',  swapS.rate === 10_000);
 
 console.log('\nfees() seed boundary');
 
-assertThrows('seed 0.64 rejected',    () => fees('x').tier('quick').seed(0.64),  ForgeValidationError);
+assertThrows('seed 0.64 rejected',    () => fees('x').tier('quick').seed(0.64), ForgeValidationError);
 const fBoundary = fees('x').tier('quick').seed(0.65);
 assert('seed 0.65 accepted',          fBoundary.total() === 650_000_000n);
 

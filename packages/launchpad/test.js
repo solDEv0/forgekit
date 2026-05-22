@@ -21,18 +21,18 @@ function testValidation() {
   const key = Keypair.generate().secretKey;
 
   const cases = [
-    ['rejects missing name',          () => launch(),                                                          ForgeValidationError],
-    ['rejects non-string name',       () => launch(99),                                                        ForgeValidationError],
-    ['rejects bad mint address',      () => launch('x').mint(123),                                             ForgeValidationError],
+    ['rejects missing name',          () => launch(), ForgeValidationError],
+    ['rejects non-string name',       () => launch(99), ForgeValidationError],
+    ['rejects bad mint address',      () => launch('x').mint(123), ForgeValidationError],
     ['rejects bad decimals',          () => launch('x').mint('abc123abc123abc123abc123abc123ab').decimals(10), ForgeValidationError],
-    ['rejects seed below minimum',    () => launch('x').mint('abc123abc123abc123abc123abc123ab').seed(0.3),    ForgeValidationError],
-    ['rejects seed of exactly 0',     () => launch('x').mint('abc123abc123abc123abc123abc123ab').seed(0),      ForgeValidationError],
-    ['rejects invalid fee tier',      () => launch('x').mint('abc123abc123abc123abc123abc123ab').feeTier(3),   ForgeValidationError],
-    ['rejects non-Uint8Array wallet', () => launch('x').mint('abc123abc123abc123abc123abc123ab').wallet('x'),  ForgeValidationError],
-    ['rejects bad rpc url',           () => launch('x').mint('abc123abc123abc123abc123abc123ab').rpc('nope'),  ForgeValidationError],
-    ['rejects send with no mint',     () => launch('x').wallet(key).seed(0.65).tokens(1).decimals(6).send(),  ForgeValidationError],
+    ['rejects seed below minimum',    () => launch('x').mint('abc123abc123abc123abc123abc123ab').seed(0.3), ForgeValidationError],
+    ['rejects seed of exactly 0',     () => launch('x').mint('abc123abc123abc123abc123abc123ab').seed(0), ForgeValidationError],
+    ['rejects invalid fee tier',      () => launch('x').mint('abc123abc123abc123abc123abc123ab').feeTier(3), ForgeValidationError],
+    ['rejects non-Uint8Array wallet', () => launch('x').mint('abc123abc123abc123abc123abc123ab').wallet('x'), ForgeValidationError],
+    ['rejects bad rpc url',           () => launch('x').mint('abc123abc123abc123abc123abc123ab').rpc('nope'), ForgeValidationError],
+    ['rejects send with no mint',     () => launch('x').wallet(key).seed(0.65).tokens(1).decimals(6).send(), ForgeValidationError],
     ['rejects send with no tokens',   () => launch('x').mint('abc123abc123abc123abc123abc123ab').decimals(6).seed(0.65).wallet(key).send(), ForgeValidationError],
-    ['rejects send with no wallet',   () => launch('x').mint('abc123abc123abc123abc123abc123ab').decimals(6).tokens(1).seed(0.65).send(),  ForgeValidationError],
+    ['rejects send with no wallet',   () => launch('x').mint('abc123abc123abc123abc123abc123ab').decimals(6).tokens(1).seed(0.65).send(), ForgeValidationError],
   ];
 
   for (const [label, fn, ErrorClass] of cases) {
